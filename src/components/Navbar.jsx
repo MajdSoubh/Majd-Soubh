@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Navbar = () => {
-  return <div>Navbar</div>;
+  return <div className="py-4 px-8 flex justify-end items-center"> sa</div>;
 };
