@@ -15,6 +15,7 @@ export const Home = () => {
             <Typewriter
               texts={["Front-End", "Back-End", "Full-Stack"]}
               infinity={true}
+              render={(f) => <div>{f}|</div>}
               loop={true}
             />
           </div>
