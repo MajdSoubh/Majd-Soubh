@@ -19,8 +19,8 @@ const Link = ({ label, borderHoverColor }) => {
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <div className="relative">
-      <div className="max-md:hidden py-2 px-4 flex justify-end items-center gap-8 text-slate-300">
+    <div className="relative h-[56px]">
+      <div className="h-full max-md:hidden py-2 px-4 flex justify-end items-center gap-8 text-slate-300">
         <Link label={"Home"} borderHoverColor={"#FF00FF"} />
         <Link label={"About"} borderHoverColor={"#00c896"} />
         <Link label={"Experience"} borderHoverColor={"#FF00FF"} />
@@ -28,28 +28,36 @@ export const Navbar = () => {
         <Link label={"Projects"} borderHoverColor={"#00c896"} />
         <Link label={"Contact"} borderHoverColor={"#FF00FF"} />
       </div>
-      <div className="md:hidden py-2 px-2  flex justify-end items-center gap-8 text-slate-300">
-        <div>
-          <svg
-            className="ham hamRotate ham4"
-            viewBox="0 0 100 100"
-            width="60"
-            onClick={(e) => {
-              e.currentTarget.classList.toggle("active");
-              setOpen(!isOpen);
-            }}
-          >
-            <path
-              className="line top"
-              d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
-            />
-            <path className="line middle" d="m 70,50 h -40" />
-            <path
-              className="line bottom"
-              d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
-            />
-          </svg>
-        </div>
+      <div className="h-full md:hidden py-2 px-2 flex justify-end items-center gap-8 text-slate-300">
+        <button className="relative" onClick={() => setOpen(!isOpen)}>
+          <div className="relative flex items-center justify-center rounded-full w-[30px] h-[30px] transform transition-all duration-200 shadow-md">
+            <div
+              className="flex flex-col justify-between w-full h-full transform transition-all duration-300 origin-center"
+              style={{ rotate: isOpen ? "-45deg" : "0deg" }}
+            >
+              <div
+                className="bg-white h-[3px] w-1/2 rounded transform transition-all duration-300  origin-right delay-75"
+                style={{
+                  rotate: isOpen ? "-90deg" : "0deg",
+                  height: isOpen ? "2px" : "3px",
+                }}
+              ></div>
+              <div
+                className="bg-white h-[3px] rounded"
+                style={{
+                  height: isOpen ? "2px" : "3px",
+                }}
+              ></div>
+              <div
+                className="bg-white h-[3px] w-1/2 rounded self-end transform transition-all duration-300 origin-left delay-75 "
+                style={{
+                  rotate: isOpen ? "-90deg" : "0deg",
+                  height: isOpen ? "2px" : "3px",
+                }}
+              ></div>
+            </div>
+          </div>
+        </button>
       </div>
 
       <ul
