@@ -22,18 +22,18 @@ module.exports = {
           custom: "#FF00FF",
         },
       },
-      strokeDasharray: {
-        "40_121": "40 121",
-      },
-      strokeDashoffset: {
-        "-68": "-68px",
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
+
       keyframes: {
+        "gradient-text": {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -100,6 +100,7 @@ module.exports = {
         },
       },
       animation: {
+        "gradient-text": "gradient-text 3s ease infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         spotlight: "spotlight 2s ease .75s 1 forwards",
@@ -114,5 +115,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-3d")({ legacy: true })],
 };
