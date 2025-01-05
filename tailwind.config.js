@@ -1,6 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+
+const colours = ["lime", "red", "green", "sky", "black", "cyan", "white"];
+
+const safeColours = colours.flatMap((color) => [
+  `bg-${color}-300`,
+  `border-${color}-400`,
+  `hover:bg-${color}-700`,
+  `group-hover:bg-${color}-700`,
+]);
+
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}", "./components/**/*.jsx"],
+  safelist: [...safeColours],
   theme: {
     extend: {
       colors: {
@@ -9,11 +20,13 @@ module.exports = {
           100: "#000319",
           200: "rgba(17, 25, 40, 0.75)",
           300: "rgba(255, 255, 255, 0.125)",
+          700: "rgba(255, 255, 255, 0.125)",
         },
         white: {
           DEFAULT: "#FFF",
           100: "#BEC1DD",
           200: "#C1C2D3",
+          700: "#fff",
         },
         blue: {
           100: "#E4ECFF",
