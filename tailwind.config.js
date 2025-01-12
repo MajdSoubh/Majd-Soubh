@@ -1,27 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 
-const colours = ["lime", "red", "green", "sky", "black", "cyan", "white"];
-
-const safeColours = colours.flatMap((color) => [
-  `bg-${color}-300`,
-  `border-${color}-400`,
-  `hover:bg-${color}-700`,
-  `group-hover:bg-${color}-700`,
-]);
-
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}", "./components/**/*.jsx"],
-  safelist: [...safeColours],
+
   theme: {
     extend: {
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(to bottom right in oklab, #00c8969e 11% 11%, 23%, #0b0b0b 35% 66%, #ff00ff9c 92% 92%)",
+      },
+      height: {
+        screen: "var(--real-vh)",
+      },
       colors: {
-        black: {
-          DEFAULT: "#000",
-          100: "#000319",
-          200: "rgba(17, 25, 40, 0.75)",
-          300: "rgba(255, 255, 255, 0.125)",
-          700: "rgba(255, 255, 255, 0.125)",
-        },
         white: {
           DEFAULT: "#FFF",
           100: "#BEC1DD",
@@ -95,31 +86,47 @@ module.exports = {
             transform: "rotate(360deg)",
           },
         },
-        moveVertical: {
-          "0%": {
-            transform: "translateY(-50%)",
-          },
-          "50%": {
-            transform: "translateY(50%)",
-          },
-          "100%": {
-            transform: "translateY(-50%)",
-          },
-        },
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+        moveTopDown: {
+          "0%": {
+            transform: "translateY(0vh)",
+          },
+          "100%": {
+            transform: "translateY(100vh)",
+          },
+        },
+        moveDownTop: {
+          "0%": {
+            transform: "translateY(0vh)",
+          },
+          "100%": {
+            transform: "translateY(-100vh)",
+          },
+        },
+
+        blink: {
+          "0%": {
+            opacity: 1,
+          },
+          "100%": {
+            opacity: 0,
+          },
+        },
       },
       animation: {
+        blink: "blink 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "top-down": "moveTopDown 5s ease-in-out infinite alternate",
+        "down-top": "moveDownTop 5s ease-in-out infinite alternate",
+        second: "moveInCircle 20s reverse infinite",
         "gradient-text": "gradient-text 3s ease infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         spotlight: "spotlight 2s ease .75s 1 forwards",
         shimmer: "shimmer 2s linear infinite",
-        first: "moveVertical 30s ease infinite",
-        second: "moveInCircle 20s reverse infinite",
         third: "moveInCircle 40s linear infinite",
         fourth: "moveHorizontal 40s ease infinite",
         fifth: "moveInCircle 20s ease infinite",
@@ -128,5 +135,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-3d")({ legacy: true })],
+  plugins: [require("@xpd/tailwind-3dtransforms")],
 };
