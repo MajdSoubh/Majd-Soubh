@@ -20,7 +20,7 @@ export default function Intro() {
 
     // Calculate rotation angles (in degrees)
     const rotateY = -(mouseX / (rect.width / 2)) * 20; // Rotate around Y-axis (max 20 degrees)
-    const rotateX = -(mouseY / (rect.width / 2)) * 20; // Rotate around X-axis (max 20 degrees)
+    const rotateX = (mouseY / (rect.width / 2)) * 20; // Rotate around X-axis (max 20 degrees)
 
     // Apply the rotation using CSS transform
     div.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
