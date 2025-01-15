@@ -34,4 +34,12 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    function setViewHeight() {
+      let vh = window.innerHeight;
+      document.documentElement.style.setProperty("--real-vh", `${vh}px`);
+    }
+    window.addEventListener("resize", setViewHeight);
+    setViewHeight();
+  </script>
 </html>
