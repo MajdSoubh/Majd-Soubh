@@ -1,39 +1,18 @@
 import React from "react";
-import { useTypeWriter } from "../hooks/useTypeWriter";
-import Typewriter from "./TypeWriter";
 import { SocialBoxLink } from "./partials/SocialBoxLink";
+import Intro from "./partials/Intro";
+import { SpotLight } from "./SpotLight";
 
 export const Home = () => {
   return (
-    <div className=" h-[calc(100dvh-56px)] ">
-      <div className="w-[700px] max-sm:w-full max-md:w-[500px] text-center transition-all px-4 mx-auto flex flex-col h-full justify-center items-start gap-4 text-slate-300">
-        <h3 className=" md:text-5xl text-4xl  max-md:ml-[40px] ml-[20px]">
-          Hi, I'm Majd
-        </h3>
-        <div className="w-full flex gap-2 justify-center items-center text-5xl md:text-7xl transition-all">
-          <div>&lt;</div>
-          <div>
-            <Typewriter
-              texts={["Front-End", "Back-End", "Full-Stack"]}
-              infinity={true}
-              render={(text) => (
-                <div className="bg-clip-text text-transparent bg-gradient-to-r from-[#00c896] to-[#ff00ff] animate-gradient-text">
-                  {text}
-                </div>
-              )}
-              loop={true}
-            />
-          </div>
-          <div>&nbsp;/&gt;</div>
-        </div>
-        <h3 className="self-end md:text-5xl text-4xl  max-md:mr-[40px] mr-[20px] transition-all">
-          Developer
-        </h3>
-        <h3 className="text-lg mt-4 text-slate-400">
-          Setting forth on the journey of innovation and excellence, building
-          exceptional software solutions for every challenge
-        </h3>
-        {/* Social Media */}
+    <div className="relative h-dvh">
+      {/* Backgroun Blur */}
+      <div className="h-full w-full bg-custom-gradient absolute left-0 top-0 blur-xl" />
+      {/* Intro */}
+      <div className="h-full b w-[600px] max-sm:w-[min(100%,400px)] flex flex-col items-center justify-center transition-all cursor-pointer  mx-auto ">
+        {/* Type Writer Intro */}
+        <Intro />
+        {/* Social Links */}
         <div className="mt-12 flex justify-center w-full flex-wrap gap-4">
           {/* Github */}
           <SocialBoxLink hoverColor="black" link="https://github.com/MajdSoubh">
@@ -50,17 +29,17 @@ export const Home = () => {
 
           {/* Linked in */}
           <SocialBoxLink
-            hoverColor="sky"
+            hoverColor="#0077B5"
             link="https://linkedin.com/in/majd-soubh/"
           >
             <svg
-              viewBox="0 0 24 24"
               width="40"
               height="40"
               fill="#0077B5"
               className="group-hover:fill-white transition-colors ease-in-out duration-300"
+              viewBox="0 0 448 512"
             >
-              <path d="M8 19H5V9h3v10zM6.5 7.25A1.75 1.75 0 118.3 5.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-5.5c0-1.5-.5-2-1.5-2s-1.5.5-1.5 2V19h-3V9h3v1.5a3.5 3.5 0 013-1.5c2.2 0 3.5 1.5 3.5 4z" />
+              <path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8 h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"></path>
             </svg>
           </SocialBoxLink>
 
@@ -89,18 +68,18 @@ export const Home = () => {
           </SocialBoxLink>
 
           {/* Telegram icon */}
-          <SocialBoxLink hoverColor="cyan" link="https://t.me/+963987518954">
+          {/* <SocialBoxLink hoverColor="#0077B5" link="https://t.me/+963987518954">
             <svg
-              fill="#3276C3"
+            fill="#3276C3"
               viewBox="0 0 24 24"
               className="group-hover:fill-white transition-colors ease-in-out duration-300"
-            >
+              >
               <g strokeLinecap="round" strokeLinejoin="round"></g>
               <g>
-                <path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path>
+              <path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path>
               </g>
-            </svg>
-          </SocialBoxLink>
+              </svg>
+              </SocialBoxLink> */}
 
           {/* Medium icon */}
           <SocialBoxLink
@@ -127,24 +106,24 @@ export const Home = () => {
           </SocialBoxLink>
 
           {/* Facebook icon */}
-          <SocialBoxLink
-            hoverColor="sky"
+          {/* <SocialBoxLink
+            hoverColor="#0077B5"
             link="https://www.facebook.com/majd.soubh.9/"
           >
             <svg
-              fill="#3276C3"
-              viewBox="0 0 1920 1920"
-              className="group-hover:fill-white transition-colors ease-in-out duration-300"
+            fill="#3276C3"
+            viewBox="0 0 1920 1920"
+            className="group-hover:fill-white transition-colors ease-in-out duration-300"
             >
-              <g strokeLinecap="round" strokeLinejoin="round"></g>
-              <g>
+            <g strokeLinecap="round" strokeLinejoin="round"></g>
+            <g>
                 <path
                   d="M1168.737 487.897c44.672-41.401 113.824-36.889 118.9-36.663l289.354-.113 6.317-417.504L1539.65 22.9C1511.675 16.02 1426.053 0 1237.324 0 901.268 0 675.425 235.206 675.425 585.137v93.97H337v451.234h338.425V1920h451.234v-789.66h356.7l62.045-451.233H1126.66v-69.152c0-54.937 14.214-96.112 42.078-122.058"
                   fillRule="evenodd"
                 ></path>
               </g>
             </svg>
-          </SocialBoxLink>
+            </SocialBoxLink> */}
         </div>
       </div>
     </div>
