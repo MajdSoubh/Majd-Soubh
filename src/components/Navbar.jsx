@@ -128,7 +128,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <div className=" h-[56px] fixed w-full left-0 top-0 backdrop-blur-sm z-20">
+    <div className=" h-[56px] fixed w-full left-0 top-0 backdrop-blur-sm z-20 border-b-[hsla(0,0%,100%,.05)] border-b">
       {/* Desktop Navigation */}
       <div className="h-full max-md:hidden mx-0 py-2 px-4 lg:mx-8 flex justify-between flex-row-reverse items-center gap-3 text-slate-300 transition-all">
         {/* Section links */}
