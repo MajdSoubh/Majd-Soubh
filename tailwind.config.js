@@ -13,17 +13,9 @@ module.exports = {
         screen: "var(--real-vh)",
       },
       colors: {
-        white: {
-          DEFAULT: "#FFF",
-          100: "#BEC1DD",
-          200: "#C1C2D3",
-          700: "#fff",
-        },
-        blue: {
-          100: "#E4ECFF",
-        },
-        purple: {
-          custom: "#FF00FF",
+        turquoise: "#00C896",
+        slate: {
+          primary: "#A1A1A1",
         },
       },
 
@@ -36,6 +28,16 @@ module.exports = {
           "50%": {
             "background-size": "200% 200%",
             "background-position": "right center",
+          },
+        },
+        "fade-in-down": {
+          from: {
+            transform: "translateY(-0.75rem)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateY(0)",
+            opacity: "1",
           },
         },
         "accordion-down": {
@@ -121,6 +123,7 @@ module.exports = {
         blink: "blink 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "top-down": "moveTopDown 5s ease-in-out infinite alternate",
         "down-top": "moveDownTop 5s ease-in-out infinite alternate",
+        "fade-in-down": "fade-in-down 0.2s ease-in-out both",
         second: "moveInCircle 20s reverse infinite",
         "gradient-text": "gradient-text 3s ease infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
