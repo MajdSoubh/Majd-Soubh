@@ -1,12 +1,11 @@
 import React from "react";
 import { SocialBoxLink } from "./partials/SocialBoxLink";
 import Intro from "./partials/Intro";
-import { SpotLight } from "./SpotLight";
 
 export const Home = () => {
   return (
-    <div className="relative h-dvh">
-      {/* Backgroun Blur */}
+    <div className="relative h-screen">
+      {/* Overlay */}
       <div className="h-full w-full bg-custom-gradient absolute left-0 top-0 blur-xl" />
       {/* Intro */}
       <div className="h-full b w-[600px] max-sm:w-[min(100%,400px)] flex flex-col items-center justify-center transition-all cursor-pointer  mx-auto ">

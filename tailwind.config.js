@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "custom-gradient":
-          "linear-gradient(to bottom right in oklab, #00c8969e 11% 11%, 23%, #0b0b0b 35% 66%, #ff00ff9c 92% 92%)",
+          "linear-gradient(to bottom right, #00c8969e 11% 11%, 23%, #0b0b0b 35% 66%, #ff00ff9c 92% 92%)",
       },
       height: {
         screen: "var(--real-vh)",
