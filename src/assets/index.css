@@ -65,6 +65,14 @@
   font-style: italic;
 }
 
+.bg-clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
 /* Menu-btn */
 
 .ham {
@@ -98,4 +106,9 @@
 }
 .ham4.active .bottom {
   stroke-dashoffset: -68px;
+}
+
+/* custom-timing */
+.custom-timing {
+  transition-timing-function: cubic-bezier(0.03, 0.98, 0.52, 0.99);
 }
