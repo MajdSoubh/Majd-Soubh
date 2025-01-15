@@ -167,8 +167,8 @@ export const Navbar = () => {
           </motion.div>
         )}
         {/* Logo */}
-        <div>
-          <img width={50} height={50} src={Logo} />
+        <div className="w-[50px] h-[50px]">
+          <img className="w-full h-full" src={Logo} />
         </div>
       </div>
       {/* Mobile Navigation Toggle */}
@@ -181,7 +181,7 @@ export const Navbar = () => {
         >
           <div className="relative flex items-center justify-center rounded-full w-[30px] h-[30px] transition-all duration-200 shadow-md">
             <div
-              className="flex flex-col justify-between w-full h-full transition-all duration-300 origin-center"
+              className="flex flex-col gap-[8px] w-full h-full transition-all duration-300 origin-center"
               style={{
                 transform: isOpen ? "rotate(-45deg)" : "rotate(0deg)",
               }}
@@ -222,8 +222,8 @@ export const Navbar = () => {
           </motion.div>
         )}
         {/* Logo */}
-        <div>
-          <img width={50} height={50} src={Logo} />
+        <div className="min-w-[50px] w-[50px] h-[50px]">
+          <img className="w-full h-full" src={Logo} />
         </div>
       </div>
       {/* Mobile Menu */}
