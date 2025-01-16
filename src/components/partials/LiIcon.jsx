@@ -10,25 +10,17 @@ const LiIcon = ({ className }) => {
 
   return (
     <motion.svg
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
       className={className}
       ref={svgRef}
       width="18"
       height="18"
       viewBox="0 0 100 100"
     >
-      <circle
-        cx="50"
-        cy="50"
-        r="50"
-        className="stroke-white stroke-1 fill-none"
-      ></circle>
       <motion.circle
         style={{ pathLength: scrollYProgress }}
         cx="50"
         cy="50"
-        r="45"
+        r="43"
         className="stroke-[10px] stroke-turquoise "
       ></motion.circle>
       <circle
