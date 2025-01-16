@@ -1,4 +1,4 @@
-import { motion, useScroll } from "motion/react";
+import { AnimatePresence, motion, useScroll } from "motion/react";
 import React, { useState } from "react";
 import Logo from "../assets/images/stylish-signture.png";
 
@@ -42,14 +42,22 @@ const Link = ({ content, borderHoverColor, ...props }) => {
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   // Track scrollY position to check if social links should displayed
   const { scrollY } = useScroll();
   const [socialLinksDisplayed, setSocialLinksDisplayed] = useState(false);
 
-  scrollY.on("change", (scrollYValue) => {
-    if (scrollYValue > window.innerHeight) setSocialLinksDisplayed(true);
+  scrollY.on("change", (currentScrollY) => {
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      setShowNavbar(false);
+    } else {
+      setShowNavbar(true);
+    }
+    if (currentScrollY > window.innerHeight) setSocialLinksDisplayed(true);
     else if (socialLinksDisplayed === true) setSocialLinksDisplayed(false);
+
+    setLastScrollY(currentScrollY);
   });
 
   const links = [
@@ -128,149 +136,159 @@ export const Navbar = () => {
   ];
 
   return (
-    <div className=" h-[56px] fixed w-full left-0 top-0 backdrop-blur-sm z-20 border-b-[hsla(0,0%,100%,.05)] border-b">
-      {/* Desktop Navigation */}
-      <div className="h-full max-md:hidden mx-0 py-2 px-4 lg:mx-8 flex justify-between flex-row-reverse items-center gap-3 text-slate-300 transition-all">
-        {/* Section links */}
+    <AnimatePresence>
+      {showNavbar && (
         <motion.div
-          variants={containerVariants(-1)}
-          initial="hidden"
-          animate="visible"
-          className="flex gap-2"
+          initial={{ top: -56 }}
+          animate={{ top: 0 }}
+          exit={{ top: -56 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="fixed h-[56px] will-change-[height] w-full left-0  backdrop-blur-sm z-20 border-b-[hsla(0,0%,100%,.05)] border-b"
         >
-          {links.map((link, index) => (
-            <Link
-              key={index}
-              variants={childVariants}
-              content={link.content}
-              borderHoverColor={link.borderHoverColor}
-            />
-          ))}
-        </motion.div>
-
-        {/* Social links */}
-        {socialLinksDisplayed && (
-          <motion.div
-            variants={containerVariants(1)}
-            initial="hidden"
-            animate="visible"
-            className="flex gap-[2px]"
-          >
-            {socialLinks.map((link, index) => (
-              <Link
-                key={index}
-                variants={childVariants}
-                content={link.content}
-                borderHoverColor={link.borderHoverColor}
-              />
-            ))}
-          </motion.div>
-        )}
-        {/* Logo */}
-        <div className="w-[50px] h-[50px]">
-          <img className="w-full h-full" src={Logo} />
-        </div>
-      </div>
-      {/* Mobile Navigation Toggle */}
-      <div className="h-full md:hidden py-2 px-2 flex flex-row-reverse justify-between items-center gap-8 text-slate-300">
-        <button
-          className="relative"
-          onClick={() => setOpen(!isOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={isOpen}
-        >
-          <div className="relative flex items-center justify-center rounded-full w-[30px] h-[30px] transition-all duration-200 shadow-md">
-            <div
-              className="flex flex-col gap-[8px] w-full h-full transition-all duration-300 origin-center"
-              style={{
-                transform: isOpen ? "rotate(-45deg)" : "rotate(0deg)",
-              }}
+          {/* Desktop Navigation */}
+          <div className="h-full max-md:hidden mx-0 py-2 px-4 lg:mx-8 flex justify-between flex-row-reverse items-center gap-3 text-slate-300">
+            {/* Section links */}
+            <motion.div
+              variants={containerVariants(-1)}
+              initial="hidden"
+              animate="visible"
+              className="flex gap-2"
             >
-              <div
-                className="bg-white h-[3px] w-[15px] rounded transition-all duration-300 origin-right delay-75"
-                style={{
-                  transform: isOpen ? "rotate(-90deg)" : "rotate(0deg)",
-                }}
-              ></div>
-              <div className="bg-white h-[3px] w-full rounded"></div>
-              <div
-                className="bg-white h-[3px] w-[15px] rounded self-end transition-all duration-300 origin-left delay-75"
-                style={{
-                  transform: isOpen ? "rotate(-90deg)" : "rotate(0deg)",
-                }}
-              ></div>
+              {links.map((link, index) => (
+                <Link
+                  key={index}
+                  variants={childVariants}
+                  content={link.content}
+                  borderHoverColor={link.borderHoverColor}
+                />
+              ))}
+            </motion.div>
+
+            {/* Social links */}
+            {socialLinksDisplayed && (
+              <motion.div
+                variants={containerVariants(1)}
+                initial="hidden"
+                animate="visible"
+                className="flex gap-[2px]"
+              >
+                {socialLinks.map((link, index) => (
+                  <Link
+                    key={index}
+                    variants={childVariants}
+                    content={link.content}
+                    borderHoverColor={link.borderHoverColor}
+                  />
+                ))}
+              </motion.div>
+            )}
+            {/* Logo */}
+            <div className="w-[50px] h-[50px]">
+              <img className="w-full h-full" src={Logo} />
             </div>
           </div>
-        </button>
+          {/* Mobile Navigation Toggle */}
+          <div className="h-full md:hidden py-2 px-2 flex flex-row-reverse justify-between items-center gap-8 text-slate-300">
+            <button
+              className="relative"
+              onClick={() => setOpen(!isOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              <div className="relative flex items-center justify-center rounded-full w-[30px] h-[30px] transition-all duration-200 shadow-md">
+                <div
+                  className="flex flex-col gap-[8px] w-full h-full transition-all duration-300 origin-center"
+                  style={{
+                    transform: isOpen ? "rotate(-45deg)" : "rotate(0deg)",
+                  }}
+                >
+                  <div
+                    className="bg-white h-[3px] w-[15px] rounded transition-all duration-300 origin-right delay-75"
+                    style={{
+                      transform: isOpen ? "rotate(-90deg)" : "rotate(0deg)",
+                    }}
+                  ></div>
+                  <div className="bg-white h-[3px] w-full rounded"></div>
+                  <div
+                    className="bg-white h-[3px] w-[15px] rounded self-end transition-all duration-300 origin-left delay-75"
+                    style={{
+                      transform: isOpen ? "rotate(-90deg)" : "rotate(0deg)",
+                    }}
+                  ></div>
+                </div>
+              </div>
+            </button>
 
-        {/* Social links */}
-        {socialLinksDisplayed && (
-          <motion.div
-            variants={containerVariants(1)}
-            initial="hidden"
-            animate="visible"
-            className="flex justify-center w-full gap-[2px]"
+            {/* Social links */}
+            {socialLinksDisplayed && (
+              <motion.div
+                variants={containerVariants(1)}
+                initial="hidden"
+                animate="visible"
+                className="flex justify-center w-full gap-[2px]"
+              >
+                {socialLinks.map((link, index) => (
+                  <Link
+                    key={index}
+                    variants={childVariants}
+                    content={link.content}
+                    borderHoverColor={link.borderHoverColor}
+                  />
+                ))}
+              </motion.div>
+            )}
+            {/* Logo */}
+            <div className="min-w-[50px] w-[50px] h-[50px]">
+              <img className="w-full h-full" src={Logo} />
+            </div>
+          </div>
+          {/* Mobile Menu */}
+          <ul
+            className={`absolute z-10 pb-2 overflow-hidden rounded-xl w-[200px] top-full right-8 transition-all delay-75 bg-black px-6 text-slate-300 flex flex-col justify-start items-start ${
+              isOpen ? "opacity-100 h-[272px]" : "opacity-0 h-0"
+            }`}
+            role="menu"
+            aria-hidden={!isOpen}
           >
-            {socialLinks.map((link, index) => (
-              <Link
-                key={index}
-                variants={childVariants}
-                content={link.content}
-                borderHoverColor={link.borderHoverColor}
-              />
-            ))}
-          </motion.div>
-        )}
-        {/* Logo */}
-        <div className="min-w-[50px] w-[50px] h-[50px]">
-          <img className="w-full h-full" src={Logo} />
-        </div>
-      </div>
-      {/* Mobile Menu */}
-      <ul
-        className={`absolute z-10 pb-2 overflow-hidden rounded-xl w-[200px] top-full right-8 transition-all delay-75 bg-black px-6 text-slate-300 flex flex-col justify-start items-start ${
-          isOpen ? "opacity-100 h-[272px]" : "opacity-0 h-0"
-        }`}
-        role="menu"
-        aria-hidden={!isOpen}
-      >
-        <li
-          className="pt-3 pb-2 cursor-pointer border-b border-transparent hover:border-purple-600"
-          role="menuitem"
-        >
-          Home
-        </li>
-        <li
-          className="pt-3 pb-2 cursor-pointer border-b border-transparent hover:border-purple-600"
-          role="menuitem"
-        >
-          About
-        </li>
-        <li
-          className="pt-3 pb-2 cursor-pointer border-b border-transparent hover:border-purple-600"
-          role="menuitem"
-        >
-          Experience
-        </li>
-        <li
-          className="pt-3 pb-2 cursor-pointer border-b border-transparent hover:border-purple-600"
-          role="menuitem"
-        >
-          Skills
-        </li>
-        <li
-          className="pt-3 pb-2 cursor-pointer border-b border-transparent hover:border-purple-600"
-          role="menuitem"
-        >
-          Projects
-        </li>
-        <li
-          className="pt-3 pb-1 cursor-pointer border-b border-transparent hover:border-purple-600"
-          role="menuitem"
-        >
-          Contact
-        </li>
-      </ul>
-    </div>
+            <li
+              className="pt-3 pb-2 cursor-pointer border-b border-transparent hover:border-purple-600"
+              role="menuitem"
+            >
+              Home
+            </li>
+            <li
+              className="pt-3 pb-2 cursor-pointer border-b border-transparent hover:border-purple-600"
+              role="menuitem"
+            >
+              About
+            </li>
+            <li
+              className="pt-3 pb-2 cursor-pointer border-b border-transparent hover:border-purple-600"
+              role="menuitem"
+            >
+              Experience
+            </li>
+            <li
+              className="pt-3 pb-2 cursor-pointer border-b border-transparent hover:border-purple-600"
+              role="menuitem"
+            >
+              Skills
+            </li>
+            <li
+              className="pt-3 pb-2 cursor-pointer border-b border-transparent hover:border-purple-600"
+              role="menuitem"
+            >
+              Projects
+            </li>
+            <li
+              className="pt-3 pb-1 cursor-pointer border-b border-transparent hover:border-purple-600"
+              role="menuitem"
+            >
+              Contact
+            </li>
+          </ul>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
