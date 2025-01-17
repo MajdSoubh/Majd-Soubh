@@ -13,6 +13,8 @@ module.exports = {
         screen: "var(--real-vh)",
       },
       colors: {
+        purple: "#FF00FF",
+        violet: "#DB02DB",
         turquoise: "#00C896",
         slate: {
           primary: "#A1A1A1",
