@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Typewriter from "../TypeWriter";
+import Card3D from "./Card3D";
 
 export default function Intro() {
   const introRef = useRef();
@@ -32,17 +33,8 @@ export default function Intro() {
   };
 
   return (
-    <div
-      className=" transform-style-3d perspective-800 "
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      onTouchMove={handleMouseMove}
-      onTouchEnd={handleMouseLeave}
-    >
-      <div
-        ref={introRef}
-        className="py-4 px-0 sm:px-4 flex flex-col justify-center items-start gap-4 text-center text-slate-300 origin-center will-change-transform duration-1000 custom-timing transition-transform hover:bg-gray-200/5"
-      >
+    <Card3D>
+      <div className="flex flex-col justify-center items-start gap-4 text-center">
         <h3 className=" sm:text-5xl text-[42px]  max-md:ml-[40px] ml-[20px]">
           Hi, I'm Majd
         </h3>
@@ -74,6 +66,6 @@ export default function Intro() {
           exceptional software solutions for every challenge
         </h3>
       </div>
-    </div>
+    </Card3D>
   );
 }

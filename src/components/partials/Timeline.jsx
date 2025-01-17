@@ -1,35 +1,26 @@
-import { useScroll, motion, useSpring } from "motion/react";
-import React, { useRef } from "react";
+import { motion } from "motion/react";
+import React from "react";
 import LiIcon from "./LiIcon";
 
-export default function Timeline({ className = "", children }) {
-  const timelineRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: timelineRef,
-    offset: ["start end", "end center"],
-  });
-  const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    mass: 1,
-  });
-
+export default function Timeline({
+  className = "",
+  children,
+  dateRanges = [],
+}) {
   return (
-    <div ref={timelineRef} className={"relative pl-8 md:pl-0 " + className}>
+    <div className={"relative pl-2 md:pl-0 " + className}>
       {/* Small Screens */}
       <div className="md:hidden ">
         <div className="absolute left-0 h-full">
           <motion.div
-            style={{ scaleY }}
-            initial={{ scaleY: 0 }} // Start with scaleY at 0 (hidden)
-            animate={{ scaleY: 1 }} // Animate to scaleY 1 (visible)
-            transition={{ delay: 0.5 }} // Wait 0.5 seconds before starting the animation
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
             className="mx-auto w-[2px] origin-top h-full bg-turquoise/60"
           ></motion.div>
         </div>
         {/* Content */}
-        <div className=" space-y-8">
+        <div className=" space-y-6">
           {React.Children.map(children, (child, index) => {
             return (
               <motion.div
@@ -37,7 +28,10 @@ export default function Timeline({ className = "", children }) {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
-                <LiIcon className={"-translate-x-[40px] "} />
+                <LiIcon
+                  dateRange={dateRanges[index]}
+                  className={"-translate-x-[16px] "}
+                />
 
                 {child}
               </motion.div>
@@ -46,29 +40,33 @@ export default function Timeline({ className = "", children }) {
         </div>
       </div>
       {/* Big Screens */}
-      <div className="hidden w-[768px] mx-auto md:block">
+      <div className="hidden w-[736px] mx-auto md:block">
         <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full">
           <motion.div
-            style={{ scaleY }}
-            className="mx-auto w-[2px] origin-top h-full bg-turquoise/60"
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="mx-auto w-[3px] origin-top h-full bg-turquoise/60"
           ></motion.div>
         </div>
         {/* Content */}
-        <div className="flex flex-row-reverse gap-y-8 justify-center [&>*]:w-[343px] flex-wrap">
+        <div className="flex flex-row-reverse gap-y-8 justify-center [&>*]:w-[358px] flex-wrap">
           {React.Children.map(children, (child, index) => {
             return (
               <motion.div
                 initial={{ x: index % 2 === 0 ? 60 : -60 }}
-                whileInView={{ x: 0 }}
+                animate={{ x: 0 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className={index % 2 === 0 ? "ml-[393px]" : "mr-[393px]"}
+                className={index % 2 === 0 ? "ml-[378px]" : "mr-[378px]"}
               >
                 <LiIcon
                   className={
                     index % 2 === 0
-                      ? "-translate-x-[33px]"
+                      ? "-translate-x-[19px]"
                       : "translate-x-[358px]"
                   }
+                  dateRange={dateRanges[index]}
+                  side={index % 2 === 0 ? "right" : "left"}
                 />
 
                 {child}

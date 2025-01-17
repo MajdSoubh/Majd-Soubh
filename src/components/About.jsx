@@ -14,7 +14,7 @@ export default function About() {
           innovative projects.
         </p>
       </div>
-      <div className="mt-6 mx-auto w-[min(500px,60%)] bg-slate-600/45 h-[2px]" />
+      <div className="mt-6 mx-auto w-[min(500px,60%)] bg-slate-600/45 h-[1px]" />
     </div>
   );
 }
