@@ -143,7 +143,7 @@ export const Navbar = () => {
           animate={{ top: 0 }}
           exit={{ top: -56 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed h-[56px] will-change-[height] w-full left-0  backdrop-blur-sm z-20 border-b-[hsla(0,0%,100%,.05)] border-b"
+          className="fixed h-[56px] will-change-[height] w-full left-0  backdrop-blur-sm z-50 border-b-[hsla(0,0%,100%,.05)] border-b"
         >
           {/* Desktop Navigation */}
           <div className="h-full max-md:hidden mx-0 py-2 px-4 lg:mx-8 flex justify-between flex-row-reverse items-center gap-3 text-slate-300">
@@ -163,28 +163,29 @@ export const Navbar = () => {
                 />
               ))}
             </motion.div>
-
-            {/* Social links */}
-            {socialLinksDisplayed && (
-              <motion.div
-                variants={containerVariants(1)}
-                initial="hidden"
-                animate="visible"
-                className="flex gap-[2px]"
-              >
-                {socialLinks.map((link, index) => (
-                  <Link
-                    key={index}
-                    variants={childVariants}
-                    content={link.content}
-                    borderHoverColor={link.borderHoverColor}
-                  />
-                ))}
-              </motion.div>
-            )}
-            {/* Logo */}
-            <div className="w-[50px] h-[50px]">
-              <img className="w-full h-full" src={Logo} />
+            <div className="flex flex-row-reverse items-center gap-4">
+              {/* Social links */}
+              {socialLinksDisplayed && (
+                <motion.div
+                  variants={containerVariants(1)}
+                  initial="hidden"
+                  animate="visible"
+                  className="flex gap-[2px] relative after:content-[''] after:absolute after:-left-1 after:top-1/2 after:w-[1px] after:h-[50%] after:-translate-y-1/2 after:bg-slate-600/60"
+                >
+                  {socialLinks.map((link, index) => (
+                    <Link
+                      key={index}
+                      variants={childVariants}
+                      content={link.content}
+                      borderHoverColor={link.borderHoverColor}
+                    />
+                  ))}
+                </motion.div>
+              )}
+              {/* Logo */}
+              <div className="w-[50px] h-[50px]">
+                <img className="w-full h-full" src={Logo} />
+              </div>
             </div>
           </div>
           {/* Mobile Navigation Toggle */}
@@ -219,32 +220,34 @@ export const Navbar = () => {
               </div>
             </button>
 
-            {/* Social links */}
-            {socialLinksDisplayed && (
-              <motion.div
-                variants={containerVariants(1)}
-                initial="hidden"
-                animate="visible"
-                className="flex justify-center w-full gap-[2px]"
-              >
-                {socialLinks.map((link, index) => (
-                  <Link
-                    key={index}
-                    variants={childVariants}
-                    content={link.content}
-                    borderHoverColor={link.borderHoverColor}
-                  />
-                ))}
-              </motion.div>
-            )}
-            {/* Logo */}
-            <div className="min-w-[50px] w-[50px] h-[50px]">
-              <img className="w-full h-full" src={Logo} />
+            <div className="flex flex-row-reverse items-center gap-4">
+              {/* Social links */}
+              {socialLinksDisplayed && (
+                <motion.div
+                  variants={containerVariants(1)}
+                  initial="hidden"
+                  animate="visible"
+                  className="flex justify-center w-full gap-[2px] relative after:content-[''] after:absolute after:-left-1 after:top-1/2 after:w-[1px] after:h-[50%] after:-translate-y-1/2 after:bg-slate-600/60"
+                >
+                  {socialLinks.map((link, index) => (
+                    <Link
+                      key={index}
+                      variants={childVariants}
+                      content={link.content}
+                      borderHoverColor={link.borderHoverColor}
+                    />
+                  ))}
+                </motion.div>
+              )}
+              {/* Logo */}
+              <div className="min-w-[50px] w-[50px] h-[50px]">
+                <img className="w-full h-full" src={Logo} />
+              </div>
             </div>
           </div>
           {/* Mobile Menu */}
           <ul
-            className={`absolute z-10 pb-2 overflow-hidden rounded-xl w-[200px] top-full right-8 transition-all delay-75 bg-black px-6 text-slate-300 flex flex-col justify-start items-start ${
+            className={`absolute z-50 pb-2 overflow-hidden rounded-xl w-[200px] top-full right-8 transition-all delay-75 bg-black px-6 text-slate-300 flex flex-col justify-start items-start ${
               isOpen ? "opacity-100 h-[272px]" : "opacity-0 h-0"
             }`}
             role="menu"
