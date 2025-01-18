@@ -121,7 +121,7 @@ function App() {
           <h2 className="mx-auto text-4xl text-slate-100 sm:text-[2.7rem] transition-all w-fit ">
             Projects
           </h2>
-          <div className="mx-auto w-fit">
+          <div className="mx-auto space-y-8 w-fit">
             {/* Project 1 */}
             <div className="relative">
               <SpotLight
@@ -139,7 +139,29 @@ function App() {
                   "Real-time chat functionality for instant communication",
                   "Clean and intuitive user interface",
                 ]}
-                link={"s"}
+                github="https://github.com/MajdSoubh/Memonto"
+              />
+            </div>
+            {/* Project 2 */}
+            <div className="relative">
+              <SpotLight
+                bgColor={"green"}
+                top={"60%"}
+                right={"0"}
+                blur="10rem"
+                className=" !w-[10rem] !h-[12rem]"
+              />
+              <Project
+                name="E-Store"
+                description="online store application enables administrators to add products and view reports, while allowing users to purchase products."
+                features={[
+                  "Implemented a responsive UI for smooth navigation and checkout process",
+                  "Establish product managment system",
+                  "Empowered owners with interactive charts to improve data understanding",
+                  "Provided real-time updates on recent events",
+                  "Performed secure payment processing and user authentication to ensure safe transactions",
+                ]}
+                github="https://github.com/MajdSoubh/Laravel-Vue-Ecommerce"
               />
             </div>
           </div>
