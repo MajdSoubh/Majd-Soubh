@@ -8,6 +8,14 @@ import WorkDetials from "./components/partials/WorkDetails";
 import SpotLight from "./components/SpotLight";
 import { AcademicIcon, WorkIcon } from "./components/partials/Icons";
 import Project from "./components/Project";
+import MemontoHome from "./assets/images/p1-home-mobile.png";
+import MemontoMesenger from "./assets/images/p1-messenger-mobile.png";
+import MemontoProfile from "./assets/images/p1-profile.png";
+import MemontoRegister from "./assets/images/p1-signup.png";
+import EStoreHome from "./assets/images/p2-home.png";
+import EStoreDashboard from "./assets/images/p2-dashboard.png";
+import EStoreReport from "./assets/images/p2-reports.png";
+import EStoreCart from "./assets/images/p2-cart.png";
 
 function App() {
   const [showWorkDetails, setShowWorkDetails] = useState(false);
@@ -140,12 +148,18 @@ function App() {
                   "Clean and intuitive user interface",
                 ]}
                 github="https://github.com/MajdSoubh/Memonto"
+                screenshots={[
+                  MemontoProfile,
+                  MemontoHome,
+                  MemontoMesenger,
+                  MemontoRegister,
+                ]}
               />
             </div>
             {/* Project 2 */}
             <div className="relative">
               <SpotLight
-                bgColor={"green"}
+                bgColor={"purple"}
                 top={"60%"}
                 right={"0"}
                 blur="10rem"
@@ -164,6 +178,38 @@ function App() {
                   "Performed secure payment processing and user authentication to ensure safe transactions",
                 ]}
                 github="https://github.com/MajdSoubh/Laravel-Vue-Ecommerce"
+                screenshots={[
+                  EStoreHome,
+                  EStoreDashboard,
+                  EStoreCart,
+                  EStoreReport,
+                ]}
+              />
+            </div>
+            {/* Project 3 */}
+            <div className="relative">
+              <SpotLight
+                bgColor={"green"}
+                top={"60%"}
+                right={"0"}
+                blur="10rem"
+                className=" !w-[10rem] !h-[12rem]"
+              />
+              <Project
+                name="Memonto"
+                description="simple social media platform for sharing posts and real-time chatting, designed to keep users seamlessly connected with friends and communities"
+                features={[
+                  "Share posts with your network",
+                  "Real-time chat functionality for instant communication",
+                  "Clean and intuitive user interface",
+                ]}
+                github="https://github.com/MajdSoubh/Memonto"
+                screenshots={[
+                  MemontoProfile,
+                  MemontoHome,
+                  MemontoMesenger,
+                  MemontoRegister,
+                ]}
               />
             </div>
           </div>
