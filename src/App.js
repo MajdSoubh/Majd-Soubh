@@ -6,7 +6,17 @@ import EducationDetails from "./components/partials/EducationDetails";
 import Timeline from "./components/partials/Timeline";
 import WorkDetials from "./components/partials/WorkDetails";
 import SpotLight from "./components/SpotLight";
-import { AcademicIcon, WorkIcon } from "./components/partials/Icons";
+import {
+  AcademicIcon,
+  JSIcon,
+  LaravelIcon,
+  NodeIcon,
+  PHPIcon,
+  ReactIcon,
+  TailwindCSSIcon,
+  VueIcon,
+  WorkIcon,
+} from "./components/partials/Icons";
 import Project from "./components/Project";
 import MemontoHome from "./assets/images/p1-home-mobile.png";
 import MemontoMesenger from "./assets/images/p1-messenger-mobile.png";
@@ -16,6 +26,9 @@ import EStoreHome from "./assets/images/p2-home.png";
 import EStoreDashboard from "./assets/images/p2-dashboard.png";
 import EStoreReport from "./assets/images/p2-reports.png";
 import EStoreCart from "./assets/images/p2-cart.png";
+import PMSDashboard from "./assets/images/p3-dashboard.png";
+import PMSInventory from "./assets/images/p3-inventory.png";
+import PMSInvoice from "./assets/images/p3-invoice.png";
 
 function App() {
   const [showWorkDetails, setShowWorkDetails] = useState(false);
@@ -154,6 +167,12 @@ function App() {
                   MemontoMesenger,
                   MemontoRegister,
                 ]}
+                technologies={[
+                  <JSIcon />,
+                  <NodeIcon />,
+                  <ReactIcon width={30} height={30} />,
+                  <TailwindCSSIcon />,
+                ]}
               />
             </div>
             {/* Project 2 */}
@@ -184,6 +203,13 @@ function App() {
                   EStoreCart,
                   EStoreReport,
                 ]}
+                technologies={[
+                  <PHPIcon width={30} height={30} />,
+                  <LaravelIcon />,
+                  <JSIcon />,
+                  <VueIcon />,
+                  <TailwindCSSIcon />,
+                ]}
               />
             </div>
             {/* Project 3 */}
@@ -196,19 +222,24 @@ function App() {
                 className=" !w-[10rem] !h-[12rem]"
               />
               <Project
-                name="Memonto"
-                description="simple social media platform for sharing posts and real-time chatting, designed to keep users seamlessly connected with friends and communities"
+                name="PMS"
+                description="web application allows pharmacist to manage and track all information about their pharmacy such as Inventory, Invoices, Purchases, Vouchers, Employees."
                 features={[
-                  "Share posts with your network",
-                  "Real-time chat functionality for instant communication",
-                  "Clean and intuitive user interface",
+                  "Allow users to create accounts and manage their own Pharmacies",
+                  "Shows the Information about Drugs, Inventory, Customer, Invoices, Purchases, Suppliers, Voucher and allow to create or update this information",
+                  "Ability to add Employees to Pharmacy and manage their permissions and roles",
+                  "Simplified the process of invoice creation by automating the steps involved, resulting in increased efficiency",
+                  "Manage and track the information of Drugs (Out Of The Stocks , Expired)",
+                  "Provide Reports for all kind of information",
                 ]}
-                github="https://github.com/MajdSoubh/Memonto"
-                screenshots={[
-                  MemontoProfile,
-                  MemontoHome,
-                  MemontoMesenger,
-                  MemontoRegister,
+                github="https://github.com/MajdSoubh/PMS"
+                screenshots={[PMSInvoice, PMSDashboard, PMSInventory]}
+                technologies={[
+                  <PHPIcon width={30} height={30} />,
+                  <LaravelIcon />,
+                  <JSIcon />,
+                  <ReactIcon width={30} height={30} />,
+                  <TailwindCSSIcon />,
                 ]}
               />
             </div>
