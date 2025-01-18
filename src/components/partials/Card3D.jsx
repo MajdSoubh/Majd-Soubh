@@ -35,10 +35,7 @@ export default function Card3D({
   };
   return (
     <div
-      className={
-        `transform-style-3d perspective-800 cursor-pointer rounded-md` +
-        className
-      }
+      className="transform-style-3d perspective-800 cursor-pointer rounded-md w-fit "
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onTouchMove={handleMouseMove}
@@ -46,7 +43,10 @@ export default function Card3D({
     >
       <div
         ref={containerRef}
-        className="py-4 px-4 origin-center will-change-transform duration-1000 custom-timing transition-transform hover:bg-gray-200/5"
+        className={
+          "py-4 px-4 origin-center will-change-transform duration-1000 custom-timing transition-transform hover:bg-gray-200/5 " +
+          className
+        }
       >
         {children}
       </div>
