@@ -46,7 +46,7 @@ export default function Timeline({
             initial={{ scaleY: 0 }}
             animate={{ scaleY: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="mx-auto w-[2px] origin-top h-[calc(100%+10px)] bg-turquoise/60 relative after:content-[''] after:absolute after:-bottom-[2px] after:w-4 after:h-[2px] after:bg-turquoise/60"
+            className="mx-auto w-[2px] origin-top h-[calc(100%+10px)] bg-turquoise/60 relative after:content-[''] after:absolute after:-left-[14px] after:-bottom-[2px] after:w-4 after:h-[2px] after:bg-turquoise/60"
           ></motion.div>
         </div>
         {/* Content */}
