@@ -16,7 +16,7 @@ export default function Project({
       }
     >
       <div className="flex flex-col items-start justify-between bg-[#110E11] py-4 px-4">
-        <h3 className=" capitalize font-bold text-3xl sm:text-xl xs:text-lg text-turquoise">
+        <h3 className=" capitalize font-bold text-2xl sm:text-xl text-turquoise">
           {name}
         </h3>
         <div className="mt-2 mx-auto w-full bg-slate-600/30 h-[1px]" />
@@ -49,16 +49,15 @@ export default function Project({
         )}
       </div>
 
-      {link && github && (
+      {(link || github) && (
         <div className="flex justify-between w-full mt-1">
           {github && (
             <a
-              link={github}
+              href={github}
+              target="_blank"
               className={
-                "bg-[#110E11] py-2 px-4 flex gap-2 justify-center items-center rounded-sm transition-colors duration-300 hover:bg-turquoise/60 " +
-                link
-                  ? "w-[calc(50%-2px)]"
-                  : "w-full"
+                "bg-[#110E11] py-[6px] px-4 flex gap-2 justify-center items-center rounded-sm transition-colors duration-300 hover:bg-turquoise/60 " +
+                (link ? "w-[calc(50%-2px)]" : "w-full")
               }
             >
               <svg
@@ -77,10 +76,8 @@ export default function Project({
             <a
               href={link}
               className={
-                "bg-[#110E11] py-2 px-4 flex gap-2 justify-center items-center rounded-sm transition-colors duration-300 hover:bg-turquoise/60 " +
-                github
-                  ? "w-[calc(50%-2px)]"
-                  : "w-full"
+                "bg-[#110E11] py-[6px] px-4 flex gap-2 justify-center items-center rounded-sm transition-colors duration-300 hover:bg-turquoise/60 " +
+                (github ? "w-[calc(50%-2px)]" : "w-full")
               }
             >
               <svg

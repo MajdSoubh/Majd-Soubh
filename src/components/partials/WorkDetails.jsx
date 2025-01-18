@@ -10,7 +10,7 @@ const WorkDetials = ({
 }) => (
   <Card3D maxRotationDegree={3}>
     <div className="flex flex-col items-start justify-between ">
-      <h3 className=" capitalize font-bold text-3xl sm:text-xl xs:text-lg text-turquoise">
+      <h3 className=" capitalize font-bold text-2xl sm:text-xl text-turquoise">
         {position}
       </h3>
       <div className="mt-2 mx-auto w-full bg-slate-600/30 h-[1px]" />
