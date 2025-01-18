@@ -12,7 +12,7 @@ const SpotLight = ({
   return (
     <div
       className={
-        "overflow-hidden blur absolute w-[16rem] h-[16rem] sm:w-[18rem] sm:h-[18rem] z-0 bg-clip-content " +
+        "overflow-hidden blur absolute w-[16rem] h-[16rem] sm:w-[18rem] sm:h-[18rem] z-10 bg-clip-content " +
         className +
         " " +
         (left ? "-translate-x-1/2 " : "translate-x-1/2 ") +
