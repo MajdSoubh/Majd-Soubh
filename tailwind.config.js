@@ -120,8 +120,17 @@ module.exports = {
             opacity: 0,
           },
         },
+        delay: {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
       },
       animation: {
+        delay: "delay 0.6s cubic-bezier(0.4, 0, 0.6, 1)",
         blink: "blink 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "top-down": "moveTopDown 5s ease-in-out infinite alternate",
         "down-top": "moveDownTop 5s ease-in-out infinite alternate",
