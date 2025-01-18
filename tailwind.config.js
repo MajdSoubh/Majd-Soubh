@@ -12,6 +12,9 @@ module.exports = {
       height: {
         screen: "var(--real-vh)",
       },
+      boxShadow: {
+        full: "0 0  3px #00C896", // Adjust the color and spread radius as needed
+      },
       colors: {
         purple: "#FF00FF",
         violet: "#DB02DB",
@@ -19,6 +22,9 @@ module.exports = {
         slate: {
           primary: "#A1A1A1",
         },
+      },
+      transform: {
+        "3d": "translate3d(var(--tw-translate-x), var(--tw-translate-y), var(--tw-translate-z))",
       },
 
       keyframes: {
