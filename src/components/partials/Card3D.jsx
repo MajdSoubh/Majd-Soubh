@@ -35,7 +35,7 @@ export default function Card3D({
   };
   return (
     <div
-      className="transform-style-3d perspective-800 cursor-pointer rounded-md w-fit "
+      className="transform-style-3d perspective-800 cursor-pointer rounded-md w-full "
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onTouchMove={handleMouseMove}
