@@ -152,6 +152,8 @@ function App() {
                 className=" !w-[10rem] !h-[12rem]"
               />
               <Project
+                textColorClass="text-purple"
+                buttonColorClass="hover:bg-purple/60"
                 name="E-Store"
                 description="online store application enables administrators to add products and view reports, while allowing users to purchase products."
                 features={[
