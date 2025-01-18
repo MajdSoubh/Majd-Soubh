@@ -4,10 +4,10 @@ import { Home } from "./components/Home";
 import { Navbar } from "./components/Navbar";
 import EducationDetails from "./components/partials/EducationDetails";
 import Timeline from "./components/partials/Timeline";
-import { motion } from "framer-motion";
 import WorkDetials from "./components/partials/WorkDetails";
 import SpotLight from "./components/SpotLight";
 import { AcademicIcon, WorkIcon } from "./components/partials/Icons";
+import Project from "./components/Project";
 
 function App() {
   const [showWorkDetails, setShowWorkDetails] = useState(false);
@@ -17,9 +17,9 @@ function App() {
       <Navbar />
       <Home />
 
-      <div className="relative my-20 bg-dark">
+      <div className="relative space-y-20 my-20 bg-dark">
         {/* About */}
-        <div className="relative">
+        <div className="relative ">
           <SpotLight
             bgColor={"green"}
             top={"50%"}
@@ -31,7 +31,7 @@ function App() {
         </div>
 
         {/* Experince & Education */}
-        <div className="mt-16 space-y-10">
+        <div className="space-y-10">
           {/* Timeline Switcher */}
           <div className="mx-auto flex justify-center items-center gap-8">
             <button
@@ -67,7 +67,7 @@ function App() {
             </button>
           </div>
 
-          {/* Time Line Box */}
+          {/* TimeLine Box */}
           <div>
             {showWorkDetails && (
               <Timeline dateRanges={["Nov 2023 - Jun 2024", "2021-Present"]}>
@@ -112,6 +112,36 @@ function App() {
                 />
               </Timeline>
             )}
+          </div>
+        </div>
+
+        {/* Projects */}
+        <div className="space-y-10">
+          {/* Title */}
+          <h2 className="mx-auto text-4xl text-slate-100 sm:text-[2.7rem] transition-all w-fit ">
+            Projects
+          </h2>
+          <div className="mx-auto w-fit">
+            {/* Project 1 */}
+            <div className="relative">
+              <SpotLight
+                bgColor={"green"}
+                top={"60%"}
+                right={"0"}
+                blur="10rem"
+                className=" !w-[10rem] !h-[12rem]"
+              />
+              <Project
+                name="Memonto"
+                description="simple social media platform for sharing posts and real-time chatting, designed to keep users seamlessly connected with friends and communities"
+                features={[
+                  "Share posts with your network",
+                  "Real-time chat functionality for instant communication",
+                  "Clean and intuitive user interface",
+                ]}
+                link={"s"}
+              />
+            </div>
           </div>
         </div>
       </div>
