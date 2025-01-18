@@ -33,7 +33,7 @@ export default function Intro() {
   };
 
   return (
-    <Card3D>
+    <Card3D className={"!p-0"}>
       <div className="flex flex-col justify-center items-start gap-4 text-center">
         <h3 className=" sm:text-5xl text-[42px]  max-md:ml-[40px] ml-[20px]">
           Hi, I'm Majd
