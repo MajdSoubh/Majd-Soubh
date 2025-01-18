@@ -10,6 +10,7 @@ export default function Project({
   textColorClass = null,
   buttonColorClass = null,
   screenshots = [],
+  technologies = [],
 }) {
   return (
     <div className=" w-full md:w-[620px] space-y-4 ">
@@ -17,29 +18,30 @@ export default function Project({
       <div className=" relative z-20 ">
         {screenshots.length === 3 && (
           <Card3D maxRotationDegree={7} className={" !p-0 "}>
-            <div className="bg-[#110E11] group p-4 relative h-[30rem] perspective-800">
-              <div className="absolute z-10 w-[60%] transform group-hover:translate-z-8 transition-transform duration-200 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+            <div className="bg-[#110E11] group p-4 relative h-[14rem] md:h-[18rem]  perspective-800">
+              <div className="absolute z-20 md:h-[12.5rem] w-[55%] shadow-[0_0_3px_#00C896]  transform group-hover:-translate-y-[43%] transition-transform duration-200 top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
                 <img
+                  alt="project-screenshot-1"
                   className="w-full h-full object-contain"
                   src={screenshots[0]}
                 />
               </div>
-              {screenshots.length > 1 && (
-                <div className="absolute  w-[30%]  h-[60%] bottom-0 left-4  transform group-hover:-translate-x-4 transition-transform duration-200">
-                  <img
-                    className="w-full h-full object-contain"
-                    src={screenshots[1]}
-                  />
-                </div>
-              )}
-              {screenshots.length > 2 && (
-                <div className="absolute  w-[30%] h-[60%] bottom-0 right-4 transform group-hover:translate-x-4 transition-transform duration-200">
-                  <img
-                    className="w-full h-full object-contain"
-                    src={screenshots[2]}
-                  />
-                </div>
-              )}
+
+              <div className="absolute z-10 w-[48%]  h-[60%] top-0 left-0  transform group-hover:-translate-y-4 transition-transform duration-200">
+                <img
+                  alt="project-screenshot-3"
+                  className="w-full h-full object-contain"
+                  src={screenshots[1]}
+                />
+              </div>
+
+              <div className="absolute z-10 w-[48%] h-[60%] top-0  right-0 transform group-hover:-translate-y-4 transition-transform duration-200">
+                <img
+                  alt="project-screenshot-4"
+                  className="w-full h-full object-contain"
+                  src={screenshots[2]}
+                />
+              </div>
             </div>
           </Card3D>
         )}
@@ -90,12 +92,12 @@ export default function Project({
             {name}
           </h3>
           <div className="mt-2 mx-auto w-full bg-slate-600/30 h-[1px]" />
-          <p className="text-white capitalize block mt-2">{description}</p>
-          {/* <p className="mt-2 font-medium w-full md:text-sm mb-1 text-slate-400">
-          {work}
-        </p> */}
+          <p className="text-white first-letter:capitalize block mt-2">
+            {description}
+          </p>
+
           {features.length > 0 && (
-            <div className="mt-4 space-y-2">
+            <div className="mt-4 space-y-3">
               {features.map((a, i) => (
                 <div key={i} className="font-medium relative w-full text-sm">
                   <svg
@@ -114,6 +116,16 @@ export default function Project({
                     ></path>
                   </svg>
                   <p className="ml-8 text-slate-200">{a}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          {/* Technologies */}
+          {technologies.length > 0 && (
+            <div className="mt-4 flex items-center gap-2">
+              {technologies.map((icon, ind) => (
+                <div className="" key={ind}>
+                  {icon}
                 </div>
               ))}
             </div>
