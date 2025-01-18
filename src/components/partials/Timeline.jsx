@@ -16,7 +16,7 @@ export default function Timeline({
             initial={{ scaleY: 0 }}
             animate={{ scaleY: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="mx-auto w-[2px] origin-top h-full bg-turquoise/60"
+            className="mx-auto w-[2px] origin-top h-[calc(100%+10px)] bg-turquoise/60 relative after:content-[''] after:absolute after:-bottom-[2px] after:w-4 after:h-[2px] after:bg-turquoise/60"
           ></motion.div>
         </div>
         {/* Content */}
@@ -30,7 +30,7 @@ export default function Timeline({
               >
                 <LiIcon
                   dateRange={dateRanges[index]}
-                  className={"-translate-x-[16px] "}
+                  className={"-translate-x-[16px] animate-delay"}
                 />
 
                 {child}
@@ -46,7 +46,7 @@ export default function Timeline({
             initial={{ scaleY: 0 }}
             animate={{ scaleY: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="mx-auto w-[3px] origin-top h-full bg-turquoise/60"
+            className="mx-auto w-[2px] origin-top h-[calc(100%+10px)] bg-turquoise/60 relative after:content-[''] after:absolute after:-bottom-[2px] after:w-4 after:h-[2px] after:bg-turquoise/60"
           ></motion.div>
         </div>
         {/* Content */}
@@ -61,9 +61,10 @@ export default function Timeline({
               >
                 <LiIcon
                   className={
-                    index % 2 === 0
+                    "animate-delay " +
+                    (index % 2 === 0
                       ? "-translate-x-[19px]"
-                      : "translate-x-[358px]"
+                      : "translate-x-[358px]")
                   }
                   dateRange={dateRanges[index]}
                   side={index % 2 === 0 ? "right" : "left"}
