@@ -8,7 +8,7 @@ export default function Contact() {
       <div className="transform-style-3d  will-change-transform perspective-400 transform translate-z-0 p-4 bg-glassy shadow-[0_0_3px_#887388] group-hover:shadow-[0_0_10px_#00C896] relative transition-shadow duration-300 ">
         {/* Icon */}
         <div className="absolute top-[-12px] left-[-25px] transform group-hover:translate-z-4 transition-transform duration-1000 ease-[cubic-bezier(0.03,0.98,0.52,0.99)]">
-          <div className="bg-glassy size-[60px]  shadow-[0_0_3px_#887388] group-hover:shadow-[0_0_10px_#00C896]  p-2 flex items-center justify-center rounded-md duration-300  transition-shadow">
+          <div className="bg-glassy size-[50px]  shadow-[0_0_3px_#887388] group-hover:shadow-[0_0_10px_#00C896]  p-2 flex items-center justify-center rounded-md duration-300  transition-shadow">
             <svg
               className="w-10 h-10 fill-white"
               viewBox="0 0 24 24"
@@ -24,7 +24,7 @@ export default function Contact() {
         <div className="transform group-hover:translate-z-4 transition-transform duration-1000 ease-[cubic-bezier(0.03,0.98,0.52,0.99)]">
           <div className="p-4 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-7">
             {/* Image */}
-            <div className="size-[150px]  border overflow-hidden rounded-full group-hover:shadow-[0_0_14px_1px_#00C896] transition-shadow duration-300">
+            <div className="size-[150px]  border overflow-hidden rounded-full group-hover:shadow-[0_0_10px_0px_#00C896] transition-shadow duration-300">
               <img src={Profile} alt="profile-image" />
             </div>
 
@@ -42,7 +42,7 @@ export default function Contact() {
               <ul className="flex flex-col gap-1 opacity-100 translate-y-0 translate-z-[30px]">
                 <li className="flex gap-[10px] text-sm">
                   <svg
-                    className="size-4 mt-[1px] fill-mutedForeground"
+                    className="size-4 mt-[1px] fill-white"
                     viewBox="0 0 384 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -52,7 +52,7 @@ export default function Contact() {
                 </li>
                 <li className="flex gap-[10px] text-sm">
                   <svg
-                    className="size-4 mt-[1px] fill-mutedForeground"
+                    className="size-4 mt-[1px] fill-white"
                     viewBox="0 0 512 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -62,7 +62,7 @@ export default function Contact() {
                 </li>
                 <li className="flex gap-2 text-sm">
                   <svg
-                    className="size-4 mt-[1px] fill-mutedForeground"
+                    className="size-4 mt-[1px] fill-white"
                     viewBox="0 0 384 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >
