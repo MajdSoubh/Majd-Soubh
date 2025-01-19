@@ -12,9 +12,6 @@ module.exports = {
       height: {
         screen: "var(--real-vh)",
       },
-      boxShadow: {
-        full: "0 0  3px #00C896", // Adjust the color and spread radius as needed
-      },
       colors: {
         purple: "#FF00FF",
         violet: "#DB02DB",
@@ -49,43 +46,6 @@ module.exports = {
             opacity: "1",
           },
         },
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        spotlight: {
-          "0%": {
-            opacity: "0",
-            transform: "translate(-72%, -62%) scale(0.5)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translate(-50%,-40%) scale(1)",
-          },
-        },
-        shimmer: {
-          from: {
-            backgroundPosition: "0 0",
-          },
-          to: {
-            backgroundPosition: "-200% 0",
-          },
-        },
-        moveHorizontal: {
-          "0%": {
-            transform: "translateX(-50%) translateY(-10%)",
-          },
-          "50%": {
-            transform: "translateX(50%) translateY(10%)",
-          },
-          "100%": {
-            transform: "translateX(-50%) translateY(-10%)",
-          },
-        },
         moveInCircle: {
           "0%": {
             transform: "rotate(0deg)",
@@ -95,11 +55,6 @@ module.exports = {
           },
           "100%": {
             transform: "rotate(360deg)",
-          },
-        },
-        scroll: {
-          to: {
-            transform: "translate(calc(-50% - 0.5rem))",
           },
         },
         moveTopDown: {
@@ -118,7 +73,6 @@ module.exports = {
             transform: "translateY(-100vh)",
           },
         },
-
         blink: {
           "0%": {
             opacity: 1,
@@ -135,6 +89,14 @@ module.exports = {
             opacity: 1,
           },
         },
+        "intro-text": {
+          from: {
+            color: "#00c896",
+          },
+          to: {
+            color: "#ff00ff",
+          },
+        },
       },
       animation: {
         delay: "delay 0.6s cubic-bezier(0.4, 0, 0.6, 1)",
@@ -142,17 +104,9 @@ module.exports = {
         "top-down": "moveTopDown 5s ease-in-out infinite alternate",
         "down-top": "moveDownTop 5s ease-in-out infinite alternate",
         "fade-in-down": "fade-in-down 0.2s ease-in-out both",
-        second: "moveInCircle 20s reverse infinite",
+        "move-circle": "moveInCircle 20s reverse infinite",
         "gradient-text": "gradient-text 3s ease infinite",
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        spotlight: "spotlight 2s ease .75s 1 forwards",
-        shimmer: "shimmer 2s linear infinite",
-        third: "moveInCircle 40s linear infinite",
-        fourth: "moveHorizontal 40s ease infinite",
-        fifth: "moveInCircle 20s ease infinite",
-        scroll:
-          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        "intro-text": "intro-text 2.380s linear infinite alternate",
       },
     },
   },

@@ -46,11 +46,8 @@ export default function Intro() {
               infinity={true}
               speed={180}
               render={(text) => (
-                <div className="bg-clip-text text-transparent bg-gradient-to-r flex items-center from-[#00c896] to-[#ff00ff] animate-gradient-text">
+                <div className="animate-intro-text flex items-center relative  after:animate-blink after:content-[''] after:absolute after:bg-white after:w-[5px] after:h-[80%] after:-right-[14px] ">
                   {text}
-                  <span className="ml-2 animate-blink bg-white w-[5px] inline-block">
-                    |
-                  </span>
                 </div>
               )}
               loop={true}
