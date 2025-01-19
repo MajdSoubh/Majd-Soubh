@@ -72,7 +72,7 @@ export const Navbar = () => {
     {
       content: (
         <svg
-          className="size-[22px] duration-300  fill-gray-400 hover:fill-white transition-colors"
+          className="size-[22px] duration-300  fill-gray-300 hover:fill-white transition-colors"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 496 512"
         >
@@ -85,7 +85,7 @@ export const Navbar = () => {
       content: (
         <svg
           viewBox="0 0 24 24"
-          className="size-[22px] duration-300 fill-gray-400 hover:fill-white transition-colors"
+          className="size-[22px] duration-300 fill-gray-300 hover:fill-white transition-colors"
         >
           <g strokeLinecap="round" strokeLinejoin="round"></g>
           <g>
@@ -106,7 +106,7 @@ export const Navbar = () => {
       content: (
         <svg
           viewBox="0 0 48 48"
-          className="size-6 duration-300 fill-gray-400 hover:fill-white transition-colors"
+          className="size-6 duration-300 fill-gray-300 hover:fill-white transition-colors"
         >
           <g strokeLinecap="round" strokeLinejoin="round"></g>
           <g>
@@ -125,7 +125,7 @@ export const Navbar = () => {
     {
       content: (
         <svg
-          className="size-[24px] duration-300 fill-gray-400 hover:fill-white transition-colors"
+          className="size-[24px] duration-300 fill-gray-300 hover:fill-white transition-colors"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"
         >
@@ -183,7 +183,7 @@ export const Navbar = () => {
                 </motion.div>
               )}
               {/* Logo */}
-              <div className="w-[50px] h-[50px]">
+              <div className="w-[40px] h-[40px]">
                 <img className="w-full h-full" src={Logo} />
               </div>
             </div>
@@ -240,7 +240,7 @@ export const Navbar = () => {
                 </motion.div>
               )}
               {/* Logo */}
-              <div className="min-w-[50px] w-[50px] h-[50px]">
+              <div className="min-w-[40px] w-[40px] h-[40px]">
                 <img className="w-full h-full" src={Logo} />
               </div>
             </div>
