@@ -8,7 +8,7 @@ export default function Timeline({
   dateRanges = [],
 }) {
   return (
-    <div className={"relative pl-2 md:pl-0 " + className}>
+    <div className={"relative  pl-2 md:pl-0 " + className}>
       {/* Small Screens */}
       <div className="md:hidden ">
         <div className="absolute left-0 h-full">
@@ -40,7 +40,7 @@ export default function Timeline({
         </div>
       </div>
       {/* Big Screens */}
-      <div className="hidden w-[736px] mx-auto md:block">
+      <div className="hidden   w-full md:w-[736px] lg:w-[900px] mx-auto md:block">
         <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full">
           <motion.div
             initial={{ scaleY: 0 }}
@@ -50,21 +50,21 @@ export default function Timeline({
           ></motion.div>
         </div>
         {/* Content */}
-        <div className="flex flex-row-reverse gap-y-8 justify-center [&>*]:w-[358px] flex-wrap">
+        <div className="flex flex-row-reverse gap-y-8 justify-center [&>*]:w-[47.5%] flex-wrap">
           {React.Children.map(children, (child, index) => {
             return (
               <motion.div
                 initial={{ x: index % 2 === 0 ? 60 : -60 }}
                 animate={{ x: 0 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className={index % 2 === 0 ? "ml-[378px]" : "mr-[378px]"}
+                className={index % 2 === 0 ? "ml-[53.5%]" : "mr-[53.5%]"}
               >
                 <LiIcon
                   className={
                     "animate-delay " +
                     (index % 2 === 0
-                      ? "-translate-x-[19px]"
-                      : "translate-x-[358px]")
+                      ? "-translate-x-[10%]"
+                      : "translate-x-[105.1%]")
                   }
                   dateRange={dateRanges[index]}
                   side={index % 2 === 0 ? "right" : "left"}
