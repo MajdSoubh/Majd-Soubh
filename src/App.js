@@ -29,6 +29,7 @@ import EStoreCart from "./assets/images/p2-cart.png";
 import PMSDashboard from "./assets/images/p3-dashboard.png";
 import PMSInventory from "./assets/images/p3-inventory.png";
 import PMSInvoice from "./assets/images/p3-invoice.png";
+import Contact from "./components/Contact";
 
 function App() {
   const [showWorkDetails, setShowWorkDetails] = useState(false);
@@ -243,6 +244,24 @@ function App() {
                 ]}
               />
             </div>
+          </div>
+        </div>
+
+        {/* Contact Me */}
+        <div className="space-y-10">
+          {/* Title */}
+          <h2 className="mx-auto text-4xl text-slate-100 sm:text-[2.7rem] transition-all w-fit ">
+            Contact Me
+          </h2>
+          <div className="w-fit mx-auto relative">
+            <SpotLight
+              bgColor={"green"}
+              top={"60%"}
+              right={"0"}
+              blur="11rem"
+              className=" !w-[8rem] !h-[8rem]"
+            />
+            <Contact />
           </div>
         </div>
       </div>
