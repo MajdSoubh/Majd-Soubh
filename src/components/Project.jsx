@@ -13,13 +13,13 @@ export default function Project({
   technologies = [],
 }) {
   return (
-    <div className=" w-full md:w-[620px] space-y-4 ">
+    <div className=" w-full md:w-[620px] lg:w-[900px] space-y-4 ">
       {/* Photos */}
       <div className=" relative z-20 ">
         {screenshots.length === 3 && (
           <Card3D maxRotationDegree={7} className={" !p-0 "}>
             <div className="bg-[#110E11] group p-4 relative h-[14rem] md:h-[18rem]  perspective-800">
-              <div className="absolute z-20 md:h-[12.5rem] w-[55%] shadow-[0_0_3px_#00C896]  transform group-hover:-translate-y-[43%] transition-transform duration-200 top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+              <div className="absolute z-20 md:h-[200px] md:w-[331px]   lg:w-[390px] lg:h-[230px]  shadow-[0_0_3px_#00C896]  transform group-hover:-translate-y-[43%] transition-transform duration-200 top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
                 <img
                   alt="project-screenshot-1"
                   className="w-full h-full object-contain"
@@ -48,14 +48,14 @@ export default function Project({
         {screenshots.length === 4 && (
           <Card3D maxRotationDegree={7} className={" !p-0 "}>
             <div className="bg-[#110E11] group p-4 relative h-[20rem] md:h-[30rem]  perspective-800">
-              <div className="absolute z-20 md:h-[12.5rem] w-[55%] shadow-[0_0_3px_#00C896]  transform group-hover:translate-z-8 transition-transform duration-200 top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+              <div className="absolute z-20  md:h-[200px] md:w-[331px]   lg:w-[492px] lg:h-[295px] shadow-[0_0_3px_#00C896]  transform group-hover:translate-z-8 transition-transform duration-200 top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
                 <img
                   alt="project-screenshot-1"
                   className="w-full h-full object-contain"
                   src={screenshots[0]}
                 />
               </div>
-              <div className="absolute md:h-[12.5rem]  w-[60%] transform group-hover:translate-y-8 transition-transform duration-200 bottom-8 left-1/2 -translate-x-1/2 ">
+              <div className="absolute md:h-[200px] md:w-[331px]   lg:w-[495px] lg:h-[295px] transform group-hover:translate-y-8 transition-transform duration-200 bottom-8 left-1/2 -translate-x-1/2 ">
                 <img
                   alt="project-screenshot-2"
                   className="w-full h-full object-contain"
