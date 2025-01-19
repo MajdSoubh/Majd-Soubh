@@ -40,7 +40,7 @@ import Article5 from "./assets/images/a5-jwt.jpeg";
 import Article6 from "./assets/images/a6-web-vulnerabilites.jpeg";
 
 function App() {
-  const [showWorkDetails, setShowWorkDetails] = useState(false);
+  const [showWorkDetails, setShowWorkDetails] = useState(true);
 
   return (
     <div className="bg-black relative  text-white overflow-hidden px-4 mx-auto">
