@@ -177,10 +177,10 @@ function App() {
                   MemontoRegister,
                 ]}
                 technologies={[
-                  <JSIcon />,
-                  <NodeIcon />,
+                  <JSIcon className={"w-6 h-6"} />,
+                  <NodeIcon className={"w-6 h-6"} />,
                   <ReactIcon width={30} height={30} />,
-                  <TailwindCSSIcon />,
+                  <TailwindCSSIcon className={"w-6 h-6"} />,
                 ]}
               />
             </div>
@@ -214,10 +214,10 @@ function App() {
                 ]}
                 technologies={[
                   <PHPIcon width={30} height={30} />,
-                  <LaravelIcon />,
-                  <JSIcon />,
-                  <VueIcon />,
-                  <TailwindCSSIcon />,
+                  <LaravelIcon className={"w-6 h-6"} />,
+                  <JSIcon className={"w-6 h-6"} />,
+                  <VueIcon className={"w-6 h-6"} />,
+                  <TailwindCSSIcon className={"w-6 h-6"} />,
                 ]}
               />
             </div>
@@ -245,10 +245,10 @@ function App() {
                 screenshots={[PMSInvoice, PMSDashboard, PMSInventory]}
                 technologies={[
                   <PHPIcon width={30} height={30} />,
-                  <LaravelIcon />,
-                  <JSIcon />,
+                  <LaravelIcon className={"w-6 h-6"} />,
+                  <JSIcon className={"w-6 h-6"} />,
                   <ReactIcon width={30} height={30} />,
-                  <TailwindCSSIcon />,
+                  <TailwindCSSIcon className={"w-6 h-6"} />,
                 ]}
               />
             </div>
