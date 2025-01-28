@@ -38,6 +38,7 @@ import Article3 from "./assets/images/a3-building-ioc.jpeg";
 import Article4 from "./assets/images/a4-what-is-cors.jpeg";
 import Article5 from "./assets/images/a5-jwt.jpeg";
 import Article6 from "./assets/images/a6-web-vulnerabilites.jpeg";
+import Article7 from "./assets/images/a7-facade.jpeg";
 
 function App() {
   const [showWorkDetails, setShowWorkDetails] = useState(true);
@@ -288,6 +289,15 @@ function App() {
                 date="2024-12-28"
                 link="https://medium.com/@majdsoubh/building-a-simple-ioc-container-in-php-4944d2b848a9"
                 image={Article3}
+              />
+            </div>
+            {/* Article 7 */}
+            <div className="relative ">
+              <Article
+                title="Laravel Facades: Traditional and Real-Time"
+                date="2025-01-28"
+                link="https://medium.com/@majdsoubh/laravel-facades-traditional-and-real-time-330a36e71111"
+                image={Article7}
               />
             </div>
             {/* Article 4 */}
