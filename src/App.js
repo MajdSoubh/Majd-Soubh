@@ -103,16 +103,17 @@ function App() {
             {showWorkDetails && (
               <Timeline dateRanges={["Nov 2023 - Jun 2024", "2021-Present"]}>
                 <WorkDetials
-                  position="Software Engineer"
-                  companyLink="https://intenta.de"
+                  position="Backend Developer"
+                  companyLink="https://lit-co.net"
                   company="Lebanon Information Technology"
                   address="Lebanon, Remote"
-                  work="LIT, is a subsidiary of Intenta GmbH in Germany, focuses on developing smart sensors and car driving assistant products."
+                  work="LIT is the leader company, helping companies of all sizes and in all industries run at their best"
                   accomplishments={[
-                    "Collaborating with cross-functional teams to optimize localization algorithms, resulting in a 25% increase in availability and ensuring continuous service for end-users",
-                    "Refactored 6+ key components, improving code efficiency by 30%",
-                    "Generating automated tests for 5 critical features, resulting in improved feature stability",
-                    "Performed code reviews, ensuring high-quality code and consistent development standards",
+                    "Optimized database queries by following best practices, reducing page load times by 30%",
+                    "Integrated Stripe API for payment processing, ensuring efficient transactions for course enrollments",
+                    "Added real-time notifications using WebSockets, improving user engagement",
+                    "Implemented role-based access control (RBAC) to restrict system access based on user roles",
+                    "Collaborated with a team of 3 developers in an Agile, delivering features on time",
                   ]}
                 />
 
