@@ -4,7 +4,7 @@ import Intro from "./partials/Intro";
 
 export const Home = () => {
   return (
-    <div className="relative h-screen">
+    <div id="home" className="relative h-screen">
       {/* Overlay */}
       <div className="h-full w-full bg-custom-gradient absolute left-0 top-0 blur-xl" />
       {/* Intro */}

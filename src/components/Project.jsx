@@ -9,78 +9,103 @@ export default function Project({
   link = null,
   textColorClass = null,
   buttonColorClass = null,
-  screenshots = [],
   technologies = [],
+  mobile = false,
+  children,
 }) {
+  const images = React.Children.toArray(children);
+  const imageCount = images.length;
+
+  const processedImages = images.map((child, index) => {
+    return React.cloneElement(child, {
+      className: `w-full h-full object-contain ${child.props.className || ""}`,
+    });
+  });
+
   return (
-    <div className=" w-full md:w-[620px] lg:w-[900px] space-y-4 ">
-      {/* Photos */}
-      <div className=" relative z-20 ">
-        {screenshots.length === 3 && (
-          <Card3D maxRotationDegree={7} className={" !p-0 "}>
-            <div className="bg-[#110E11] group p-4 relative h-[14rem] md:h-[18rem]  perspective-800">
-              <div className="absolute z-20 md:h-[200px] md:w-[331px]   lg:w-[390px] lg:h-[230px]  shadow-[0_0_3px_#00C896]  transform group-hover:-translate-y-[43%] transition-transform duration-200 top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                <img
-                  alt="project-screenshot-1"
-                  className="w-full h-full object-contain"
-                  src={screenshots[0]}
-                />
+    <div className="w-full md:w-[620px] lg:w-[900px] space-y-4">
+      {/* 3D Card Images Section */}
+      <div className="relative z-20">
+        {imageCount === 3 && (
+          <Card3D
+            maxRotationDegree={7}
+            className={
+              "!p-0 w-full bg-[#110E11] " +
+              (mobile ? "flex justify-center " : "")
+            }
+          >
+            <div
+              className={
+                " group p-4 relative h-[14rem] md:h-[18rem] perspective-800 " +
+                (mobile
+                  ? "!grid !grid-cols-3 !w-full !h-full justify-center"
+                  : "")
+              }
+            >
+              {/* Left Side Image */}
+              <div
+                className={
+                  "absolute z-10 w-[48%] h-[60%] top-0 left-0 transform group-hover:-translate-y-4 transition-transform duration-200 " +
+                  (mobile
+                    ? "!w-full !h-max !static  translate-y-0 translate-x-1/2 group-hover:!translate-x-0 group-hover:!translate-y-0"
+                    : "")
+                }
+              >
+                {processedImages[1]}
               </div>
-
-              <div className="absolute z-10 w-[48%]  h-[60%] top-0 left-0  transform group-hover:-translate-y-4 transition-transform duration-200">
-                <img
-                  alt="project-screenshot-3"
-                  className="w-full h-full object-contain"
-                  src={screenshots[1]}
-                />
+              {/* Main Image */}
+              <div
+                className={
+                  "absolute z-20 md:h-[200px] md:w-[331px] lg:w-[390px] lg:h-[230px] shadow-[0_0_3px_#00C896] transform group-hover:-translate-y-[43%] transition-transform duration-200 top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 " +
+                  (mobile
+                    ? "!w-full !h-max !static  translate-y-0 translate-x-0 !shadow-none group-hover:scale-110 group-hover:translate-y-0"
+                    : "")
+                }
+              >
+                {processedImages[0]}
               </div>
-
-              <div className="absolute z-10 w-[48%] h-[60%] top-0  right-0 transform group-hover:-translate-y-4 transition-transform duration-200">
-                <img
-                  alt="project-screenshot-4"
-                  className="w-full h-full object-contain"
-                  src={screenshots[2]}
-                />
+              {/* Right Side Image */}
+              <div
+                className={
+                  "absolute z-10 w-[48%] h-[60%] top-0 right-0 transform group-hover:-translate-y-4 transition-transform duration-200 " +
+                  (mobile
+                    ? "!w-full !h-max !static  translate-y-0 -translate-x-1/2 group-hover:!translate-x-0 group-hover:!translate-y-0"
+                    : "")
+                }
+              >
+                {processedImages[2]}
               </div>
             </div>
           </Card3D>
         )}
-        {screenshots.length === 4 && (
-          <Card3D maxRotationDegree={7} className={" !p-0 "}>
-            <div className="bg-[#110E11] group p-4 relative h-[20rem] md:h-[30rem]  perspective-800">
-              <div className="absolute z-20  md:h-[200px] md:w-[331px]   lg:w-[492px] lg:h-[295px] shadow-[0_0_3px_#00C896]  transform group-hover:translate-z-8 transition-transform duration-200 top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                <img
-                  alt="project-screenshot-1"
-                  className="w-full h-full object-contain"
-                  src={screenshots[0]}
-                />
-              </div>
-              <div className="absolute md:h-[200px] md:w-[331px]   lg:w-[495px] lg:h-[295px] transform group-hover:translate-y-8 transition-transform duration-200 bottom-8 left-1/2 -translate-x-1/2 ">
-                <img
-                  alt="project-screenshot-2"
-                  className="w-full h-full object-contain"
-                  src={screenshots[3]}
-                />
-              </div>
-              <div className="absolute z-10 w-[30%]  h-[60%] top-0 left-4  transform group-hover:-translate-x-4 transition-transform duration-200">
-                <img
-                  alt="project-screenshot-3"
-                  className="w-full h-full object-contain"
-                  src={screenshots[1]}
-                />
+
+        {imageCount === 4 && (
+          <Card3D maxRotationDegree={7} className={"!p-0"}>
+            <div className="bg-[#110E11] group p-4 relative h-[20rem] md:h-[30rem] perspective-800">
+              {/* Main Image */}
+              <div className="absolute z-20 md:h-[200px] md:w-[331px] lg:w-[492px] lg:h-[295px] shadow-[0_0_3px_#00C896] transform group-hover:translate-z-8 transition-transform duration-200 top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2">
+                {processedImages[0]}
               </div>
 
+              {/* Bottom Image */}
+              <div className="absolute md:h-[200px] md:w-[331px] lg:w-[495px] lg:h-[295px] transform group-hover:translate-y-8 transition-transform duration-200 bottom-8 left-1/2 -translate-x-1/2">
+                {processedImages[3]}
+              </div>
+
+              {/* Left Side Image */}
+              <div className="absolute z-10 w-[30%] h-[60%] top-0 left-4 transform group-hover:-translate-x-4 transition-transform duration-200">
+                {processedImages[1]}
+              </div>
+
+              {/* Right Side Image */}
               <div className="absolute z-10 w-[30%] h-[60%] top-0 right-4 transform group-hover:translate-x-4 transition-transform duration-200">
-                <img
-                  alt="project-screenshot-4"
-                  className="w-full h-full object-contain"
-                  src={screenshots[2]}
-                />
+                {processedImages[2]}
               </div>
             </div>
           </Card3D>
         )}
       </div>
+
       <Card3D maxRotationDegree={7} className={"mx-auto !p-0"}>
         <div className="flex flex-col items-start justify-between bg-[#110E11] p-4">
           <h3
@@ -163,6 +188,7 @@ export default function Project({
               <a
                 href={link}
                 rel="noreferrer"
+                target="_blank"
                 className={
                   "bg-[#110E11] py-[6px] px-4 flex gap-2 justify-center items-center rounded-sm transition-colors duration-300  " +
                   (github ? "w-[calc(50%-2px)] " : "w-full ") +

@@ -33,12 +33,12 @@ export default function Intro() {
   };
 
   return (
-    <Card3D className={"!p-0"}>
+    <Card3D className={"!p-3"}>
       <div className="flex flex-col justify-center items-start gap-4 text-center">
         <h3 className=" sm:text-5xl text-[42px]  max-md:ml-[40px] ml-[20px]">
           Hi, I'm Majd
         </h3>
-        <div className="w-full flex gap-2 justify-center items-center text-[51px] sm:text-7xl transition-all">
+        <div className="w-full flex gap-2 justify-center items-center text-[45px] sm:text-7xl transition-all">
           <div>&lt;</div>
           <div>
             <Typewriter

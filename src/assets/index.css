@@ -4,6 +4,7 @@
 
 :root {
   font-family: "Chakra Petch", serif;
+  scroll-behavior: smooth;
 }
 .chakra-petch-light {
   font-family: "Chakra Petch", serif;
