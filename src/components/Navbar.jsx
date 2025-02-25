@@ -18,11 +18,17 @@ const childVariants = {
   visible: { y: 0, opacity: 1 },
 };
 
-const Link = ({ content, borderHoverColor, url, ...props }) => {
+const Link = ({
+  content,
+  target = "_self",
+  borderHoverColor,
+  url,
+  ...props
+}) => {
   return (
     <motion.a
       href={url}
-      target="_blank"
+      target={target}
       className="px-2 py-1 rounded-[18px] block hover:text-white cursor-pointer"
       whileHover={{
         borderBottomWidth: 2,
@@ -63,12 +69,12 @@ export const Navbar = () => {
   });
 
   const links = [
-    { content: "Home", borderHoverColor: "#FF00FF" },
-    { content: "About", borderHoverColor: "#00c896" },
-    { content: "Experience", borderHoverColor: "#FF00FF" },
-    { content: "Skills", borderHoverColor: "#00c896" },
-    { content: "Projects", borderHoverColor: "#FF00FF" },
-    { content: "Contact", borderHoverColor: "#00c896" },
+    { content: "Home", borderHoverColor: "#FF00FF", url: "#home" },
+    { content: "About", borderHoverColor: "#00c896", url: "#about" },
+    { content: "Experience", borderHoverColor: "#FF00FF", url: "#experience" },
+    { content: "Projects", borderHoverColor: "#FF00FF", url: "#projects" },
+    { content: "Articles", borderHoverColor: "#00c896", url: "#articles" },
+    { content: "Contact", borderHoverColor: "#00c896", url: "#contact" },
   ];
   const socialLinks = [
     {
@@ -163,6 +169,7 @@ export const Navbar = () => {
               {links.map((link, index) => (
                 <Link
                   key={index}
+                  url={link.url}
                   variants={childVariants}
                   content={link.content}
                   borderHoverColor={link.borderHoverColor}
