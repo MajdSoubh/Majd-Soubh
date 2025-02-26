@@ -241,16 +241,77 @@ function App() {
           </div>
         </div>
 
-        {/* Articles Section */}
-        <div
-          id="articles"
-          className="space-y-10 w-full mx-auto md:w-[736px] lg:w-[900px]"
-        >
-          <h2 className="mx-auto text-4xl text-slate-100 sm:text-[2.7rem] transition-all w-fit">
+        {/* Articles */}
+        <div className="space-y-10 w-full mx-auto md:w-[736px] lg:w-[900px]">
+          {/* Title */}
+          <h2 className=" mx-auto text-4xl text-slate-100 sm:text-[2.7rem] transition-all w-fit ">
             Articles
           </h2>
-          <div className="w-full flex flex-col flex-wrap gap-4 justify-center items-center md:items-start md:flex-row">
-            {/* Articles remain unchanged from original */}
+          <div className="  w-full flex flex-col flex-wrap gap-4 justify-center items-center md:items-start md:flex-row">
+            {/* Article 1 */}
+            <div className="relative ">
+              <Article
+                title="Implementing PHP Routing with Dynamic Parameters"
+                date="2024-08-21"
+                link="https://medium.com/@majdsoubh/implementing-php-routing-with-dynamic-parameters-18940bd80795"
+                icon={<RoutingIcon width={50} height={50} />}
+                image={Article1}
+              />
+            </div>
+            {/* Article 2 */}
+            <div className="relative ">
+              <Article
+                title="How Dependency Injection, Inversion of Control, and IoC Containers Improve Code Flexibility"
+                date="2024-11-04"
+                link="https://medium.com/@majdsoubh/how-dependency-injection-inversion-of-control-and-ioc-containers-improve-code-flexibility-e7e7943e8d0e"
+                image={Article2}
+              />
+            </div>
+            {/* Article 3 */}
+            <div className="relative ">
+              <Article
+                title="Building a Simple IoC Container in PHP"
+                date="2024-12-28"
+                link="https://medium.com/@majdsoubh/building-a-simple-ioc-container-in-php-4944d2b848a9"
+                image={Article3}
+              />
+            </div>
+            {/* Article 7 */}
+            <div className="relative ">
+              <Article
+                title="Laravel Facades: Traditional and Real-Time"
+                date="2025-01-28"
+                link="https://medium.com/@majdsoubh/laravel-facades-traditional-and-real-time-330a36e71111"
+                image={Article7}
+              />
+            </div>
+            {/* Article 4 */}
+            <div className="relative ">
+              <Article
+                title="What is CORS (Cross-Origin-Resource-Sharing)"
+                date="2024-09-13"
+                link="https://medium.com/@majdsoubh/what-is-cors-cross-origin-resource-sharing-39a54bec6ca5"
+                image={Article4}
+              />
+            </div>
+            {/* Article 5 */}
+            <div className="relative ">
+              <Article
+                title="Understanding JWT (JSON Web Token)"
+                date="2024-10-12"
+                link="https://medium.com/@majdsoubh/understanding-jwt-json-web-token-177ce1e7d38a"
+                image={Article5}
+              />
+            </div>
+            {/* Article 6 */}
+            <div className="relative ">
+              <Article
+                title="Exposing Common Web Vulnerabilities"
+                date="2024-09-10"
+                link="https://medium.com/@majdsoubh/exposing-common-web-vulnerabilities-be4ac446e5ed"
+                image={Article6}
+              />
+            </div>
           </div>
         </div>
 
