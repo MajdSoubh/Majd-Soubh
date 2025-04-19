@@ -85,7 +85,7 @@ export default function Contact() {
           Send Email
         </a>
         <a
-          href="/Majd-Soubh-Full-Stack-Developer-Resume.pdf"
+          href="/Majd-Soubh-Backend-Resume.pdf"
           target="_blank"
           // download={true}
           className="sm:w-32 bg-glassy text-center  py-2 rounded-xl sm:rounded-md  border border-turquoise duration-300 hover:shadow-[0_0_2px_1px_#00C896]  hover:scale-105"
